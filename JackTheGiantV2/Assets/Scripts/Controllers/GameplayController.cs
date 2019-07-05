@@ -4,15 +4,25 @@ namespace Mantelabs.JackTheGiant.Controllers
 {
     public class GameplayController : MonoBehaviour
     {
+        [SerializeField]
+        private GameObject _pauseButton, _pausePanel;
+
+
         public void PauseGame()
         {
-            Debug.Log("Pause the game...");
+            _pauseButton.SetActive(false);
+            _pausePanel.SetActive(true);
+
+            Time.timeScale = 0f;
         }
 
 
         public void ResumeGame()
         {
-            Debug.Log("Resume the game...");
+            _pauseButton.SetActive(true);
+            _pausePanel.SetActive(false);
+
+            Time.timeScale = 1f;
         }
 
 
