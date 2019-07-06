@@ -23,23 +23,23 @@ namespace Mantelabs.JackTheGiant.Player
 
         private void FixedUpdate()
         {
-            float h = Input.GetAxis("Horizontal");
+            float h = Input.GetAxis(Utils.Tags.Axis.Horizontal);
 
             if (h > 0f)
             {
                 MovePlayer(Vector2.right);
                 Flip(1);
-                _animator.SetBool("Moving", true);
+                _animator.SetBool(Utils.Tags.PlayerParams.Moving, true);
             }
             else if (h < 0f)
             {
                 MovePlayer(Vector2.left);
                 Flip(-1);
-                _animator.SetBool("Moving", true);
+                _animator.SetBool(Utils.Tags.PlayerParams.Moving, true);
             }
             else
             {
-                _animator.SetBool("Moving", false);
+                _animator.SetBool(Utils.Tags.PlayerParams.Moving, false);
             }
         }
 
