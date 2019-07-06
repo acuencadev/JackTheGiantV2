@@ -6,25 +6,25 @@ namespace Mantelabs.JackTheGiant.Controllers
     {
         public void StartGame()
         {
-            Debug.Log("Starting the game...");
+            SceneFaderController.instance.LoadScene("Gameplay");
         }
 
 
         public void Highscore()
         {
-            Debug.Log("Launching the highscore screen...");
+            SceneFaderController.instance.LoadScene("Highscore");
         }
 
 
         public void Options()
         {
-            Debug.Log("Launching the options screen...");
+            SceneFaderController.instance.LoadScene("Options");
         }
 
 
         public void QuitGame()
         {
-            Debug.Log("Quitting the game...");
+            Application.Quit();
         }
     }
 }

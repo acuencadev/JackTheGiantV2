@@ -41,7 +41,7 @@ namespace Mantelabs.JackTheGiant.Controllers
 
         public void GoBackToMainMenu()
         {
-            Debug.Log("Going back to main menu.");
+            SceneFaderController.instance.LoadScene("MainMenu");
         }
     }
 }
