@@ -28,11 +28,13 @@ namespace Mantelabs.JackTheGiant.Player
             if (h > 0f)
             {
                 MovePlayer(Vector2.right);
+                Flip(1);
                 _animator.SetBool("Moving", true);
             }
             else if (h < 0f)
             {
                 MovePlayer(Vector2.left);
+                Flip(-1);
                 _animator.SetBool("Moving", true);
             }
             else
@@ -45,6 +47,14 @@ namespace Mantelabs.JackTheGiant.Player
         private void MovePlayer(Vector2 direction)
         {
             _rb2d.AddForce(direction * _speed * Time.deltaTime);
+        }
+
+
+        private void Flip(int direction)
+        {
+            Vector3 theScale = transform.localScale;
+            theScale.x = direction;
+            transform.localScale = theScale;
         }
     }
 }
