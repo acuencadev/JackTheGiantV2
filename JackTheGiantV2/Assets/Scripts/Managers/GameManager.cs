@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Mantelabs.JackTheGiant.Utils;
+using UnityEngine;
 
 namespace Mantelabs.JackTheGiant.Managers
 {
@@ -6,7 +7,7 @@ namespace Mantelabs.JackTheGiant.Managers
     {
         public static GameManager instance;
 
-        public Utils.GameStatus gameStatus;
+        public GameStatus gameStatus;
 
 
         private void Awake()
