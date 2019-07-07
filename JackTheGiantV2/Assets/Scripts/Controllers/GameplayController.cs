@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Mantelabs.JackTheGiant.Managers;
+using Mantelabs.JackTheGiant.Utils;
+using UnityEngine;
 
 namespace Mantelabs.JackTheGiant.Controllers
 {
@@ -13,6 +15,7 @@ namespace Mantelabs.JackTheGiant.Controllers
             _hud.SetActive(true);
             _pauseButton.SetActive(true);
             _readyButton.SetActive(false);
+            GameManager.instance.gameStatus = GameStatus.Playing;
         }
 
 

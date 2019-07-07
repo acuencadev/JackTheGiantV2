@@ -16,6 +16,12 @@ namespace Mantelabs.JackTheGiant.Managers
         }
 
 
+        private void Start()
+        {
+            gameStatus = GameStatus.Paused;
+        }
+
+
         private void MakeSingleton()
         {
             if (instance != null)
