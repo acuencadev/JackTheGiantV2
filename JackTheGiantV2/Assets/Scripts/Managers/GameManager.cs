@@ -6,6 +6,8 @@ namespace Mantelabs.JackTheGiant.Managers
     {
         public static GameManager instance;
 
+        public Utils.GameStatus gameStatus;
+
 
         private void Awake()
         {
