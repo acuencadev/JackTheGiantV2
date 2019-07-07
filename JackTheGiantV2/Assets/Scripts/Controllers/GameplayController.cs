@@ -36,7 +36,7 @@ namespace Mantelabs.JackTheGiant.Controllers
 
         public void QuitGame()
         {
-            SceneFaderController.instance.LoadScene("MainMenu");
+            SceneFaderController.instance.LoadScene(Utils.Tags.Scenes.MainMenu);
         }
     }
 }

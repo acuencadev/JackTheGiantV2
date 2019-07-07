@@ -13,5 +13,21 @@
         {
             public static string Moving = "Moving";
         }
+
+
+        public class SceneFaderParams
+        {
+            public static string FadeIn = "SceneFader_FadeIn";
+            public static string FadeOut = "SceneFader_FadeOut";
+        }
+
+
+        public class Scenes
+        {
+            public static string MainMenu = "MainMenu";
+            public static string Highscore = "Highscore";
+            public static string Options = "Options";
+            public static string Gameplay = "Gameplay";
+        }
     }
 }

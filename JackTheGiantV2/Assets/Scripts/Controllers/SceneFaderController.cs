@@ -39,13 +39,13 @@ namespace Mantelabs.JackTheGiant.Controllers
         private IEnumerator LoadSceneAsync(string scene)
         {
             _sceneFaderPanel.SetActive(true);
-            _animator.Play("SceneFader_FadeIn");
+            _animator.Play(Utils.Tags.SceneFaderParams.FadeIn);
 
             yield return new WaitForSeconds(1f);
 
             SceneManager.LoadScene(scene);
 
-            _animator.Play("SceneFader_FadeOut");
+            _animator.Play(Utils.Tags.SceneFaderParams.FadeOut);
 
             yield return new WaitForSeconds(1f);
 

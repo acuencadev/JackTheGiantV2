@@ -6,19 +6,19 @@ namespace Mantelabs.JackTheGiant.Controllers
     {
         public void StartGame()
         {
-            SceneFaderController.instance.LoadScene("Gameplay");
+            SceneFaderController.instance.LoadScene(Utils.Tags.Scenes.Gameplay);
         }
 
 
         public void Highscore()
         {
-            SceneFaderController.instance.LoadScene("Highscore");
+            SceneFaderController.instance.LoadScene(Utils.Tags.Scenes.Highscore);
         }
 
 
         public void Options()
         {
-            SceneFaderController.instance.LoadScene("Options");
+            SceneFaderController.instance.LoadScene(Utils.Tags.Scenes.Options);
         }
 
 
