@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Mantelabs.JackTheGiant.Utils;
+using UnityEngine;
 
 namespace Mantelabs.JackTheGiant.Background
 {
@@ -9,7 +10,7 @@ namespace Mantelabs.JackTheGiant.Background
 
         private void Awake()
         {
-            _backgrounds = GameObject.FindGameObjectsWithTag("Background");    
+            _backgrounds = GameObject.FindGameObjectsWithTag(Tags.GameObjects.Background);    
         }
     }
 }

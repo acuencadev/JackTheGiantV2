@@ -29,5 +29,11 @@
             public static string Options = "Options";
             public static string Gameplay = "Gameplay";
         }
+
+
+        public class GameObjects
+        {
+            public static string Background = "Background";
+        }
     }
 }
