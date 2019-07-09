@@ -1,7 +1,7 @@
 ﻿using Mantelabs.JackTheGiant.Utils;
 using UnityEngine;
 
-namespace Mantelabs.JackTheGiant.Background
+namespace Mantelabs.JackTheGiant.Environment
 {
     public class BGCollector : MonoBehaviour
     {
