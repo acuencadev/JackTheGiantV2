@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Mantelabs.JackTheGiant.Environment
 {
-    public class CloudCollector : MonoBehaviour
+    public class CloudPooler : MonoBehaviour
     {
         private void OnTriggerEnter2D(Collider2D other)
         {

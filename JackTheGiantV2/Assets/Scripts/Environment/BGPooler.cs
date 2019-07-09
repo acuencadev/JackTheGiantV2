@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Mantelabs.JackTheGiant.Environment
 {
-    public class BGCollector : MonoBehaviour
+    public class BGPooler : MonoBehaviour
     {
         private GameObject[] _backgrounds;
 
