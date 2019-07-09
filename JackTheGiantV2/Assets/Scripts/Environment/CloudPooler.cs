@@ -49,7 +49,9 @@ namespace Mantelabs.JackTheGiant.Environment
             for (int i = 0; i < _cloudPoolSize; i++)
             {
                 float distanceBetweenClouds = Random.Range(_minDistanceBetweenClouds, _maxDistanceBetweenClouds);
-                Vector3 newPos = new Vector3(0f, _lastY - distanceBetweenClouds, 0f);
+                float alternateXPosition = i % 2 == 0 ? 2.5f : -2.5f;
+
+                Vector3 newPos = new Vector3(alternateXPosition, _lastY - distanceBetweenClouds, 0f);
                 int prefabIndex = Random.Range(0, _cloudPrefabs.Length);
 
                 GameObject newCloud = Instantiate(_cloudPrefabs[prefabIndex], newPos, Quaternion.identity);
