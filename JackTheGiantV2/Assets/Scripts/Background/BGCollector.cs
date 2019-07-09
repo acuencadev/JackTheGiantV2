@@ -5,12 +5,53 @@ namespace Mantelabs.JackTheGiant.Background
 {
     public class BGCollector : MonoBehaviour
     {
+        private GameObject[] _backgrounds;
+
+        private float _lastY;
+
+
+        private void Awake()
+        {
+            _backgrounds = GameObject.FindGameObjectsWithTag(Tags.GameObjects.Background);
+        }
+
+
+        private void Start()
+        {
+            InitializeLastY();
+        }
+
+
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag(Tags.GameObjects.Background))
             {
-                other.gameObject.SetActive(false);
+                SetNewPosition(other);
             }
+        }
+
+
+        private void InitializeLastY()
+        {
+            for (int i = 0; i < _backgrounds.Length; i++)
+            {
+                if (_lastY > _backgrounds[i].transform.position.y)
+                {
+                    _lastY = _backgrounds[i].transform.position.y;
+                }
+            }
+        }
+
+
+        private void SetNewPosition(Collider2D collider)
+        {
+            Vector3 currentPos = collider.gameObject.transform.position;
+            float height = collider.bounds.size.y;
+
+            currentPos.y = _lastY - height;
+            _lastY = currentPos.y;
+
+            collider.gameObject.transform.position = currentPos;
         }
     }
 }
