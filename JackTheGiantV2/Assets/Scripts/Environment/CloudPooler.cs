@@ -15,8 +15,12 @@ namespace Mantelabs.JackTheGiant.Environment
         private int _cloudPoolSize;
 
         [SerializeField]
-        [Range(0.5f, 3f)]
-        private float _distanceBetweenClouds;
+        [Range(0.5f, 5f)]
+        private float _minDistanceBetweenClouds;
+
+        [SerializeField]
+        [Range(0.5f, 5f)]
+        private float _maxDistanceBetweenClouds;
 
         private float _lastY;
 
@@ -44,8 +48,10 @@ namespace Mantelabs.JackTheGiant.Environment
 
             for (int i = 0; i < _cloudPoolSize; i++)
             {
-                Vector3 newPos = new Vector3(0f, _lastY - _distanceBetweenClouds, 0f);
+                float distanceBetweenClouds = Random.Range(_minDistanceBetweenClouds, _maxDistanceBetweenClouds);
+                Vector3 newPos = new Vector3(0f, _lastY - distanceBetweenClouds, 0f);
                 int prefabIndex = Random.Range(0, _cloudPrefabs.Length);
+
                 GameObject newCloud = Instantiate(_cloudPrefabs[prefabIndex], newPos, Quaternion.identity);
 
                 _lastY = newPos.y;

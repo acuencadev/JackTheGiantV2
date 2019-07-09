@@ -372,7 +372,8 @@ MonoBehaviour:
   - {fileID: 8917373560595737135, guid: 76103cef8d42eba4ba6e9404007eb8dd, type: 3}
   - {fileID: 3749415954298770975, guid: fdb7c02a18871e445987bd440d47a4ae, type: 3}
   _cloudPoolSize: 7
-  _distanceBetweenClouds: 2
+  _minDistanceBetweenClouds: 2
+  _maxDistanceBetweenClouds: 5
 --- !u!1 &411157578
 GameObject:
   m_ObjectHideFlags: 0
