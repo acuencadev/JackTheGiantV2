@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Mantelabs.JackTheGiant.Utils;
+using UnityEngine;
 
 namespace Mantelabs.JackTheGiant.Environment
 {
@@ -6,7 +7,7 @@ namespace Mantelabs.JackTheGiant.Environment
     {
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.CompareTag("Cloud") || other.CompareTag("DarkCloud"))
+            if (other.CompareTag(Tags.GameObjects.Cloud) || other.CompareTag(Tags.GameObjects.DarkCloud))
             {
                 //TODO: Collect the cloud.
             }
