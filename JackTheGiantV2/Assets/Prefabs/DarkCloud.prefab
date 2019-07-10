@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7755716690050701298}
   - component: {fileID: 7755716690050701299}
   - component: {fileID: 7755716690050701309}
+  - component: {fileID: 1776318679432404439}
   m_Layer: 9
   m_Name: DarkCloud
   m_TagString: DarkCloud
@@ -156,3 +157,15 @@ PolygonCollider2D:
       - {x: 0.4850089, y: -0.107722715}
       - {x: 0.5373105, y: -0.07047695}
       - {x: 0.5838638, y: -0.048000835}
+--- !u!114 &1776318679432404439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7755716690050701296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f24b1ad5b67702446a6f47422a584951, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
