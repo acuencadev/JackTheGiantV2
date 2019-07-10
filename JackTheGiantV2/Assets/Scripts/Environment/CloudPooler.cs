@@ -43,6 +43,12 @@ namespace Mantelabs.JackTheGiant.Environment
 
         private void OnTriggerEnter2D(Collider2D other)
         {
+            if (other.CompareTag(Tags.GameObjects.DarkCloud))
+            {
+                Destroy(other.gameObject);
+                //TODO: Replace with Cloud.
+            }
+
             if (other.gameObject.CompareTag(Tags.GameObjects.Cloud) || other.CompareTag(Tags.GameObjects.DarkCloud))
             {
                 if (other.transform.position.x == 0f)
@@ -51,6 +57,7 @@ namespace Mantelabs.JackTheGiant.Environment
                 }
                 else
                 {
+                    //TODO: Check if can set a Cloud or a DarkCloud.
                     SetNewPosition(other.gameObject);
                 }
             }
