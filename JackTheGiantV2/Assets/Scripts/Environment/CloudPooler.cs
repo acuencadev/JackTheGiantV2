@@ -33,9 +33,16 @@ namespace Mantelabs.JackTheGiant.Environment
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.CompareTag(Tags.GameObjects.Cloud) || other.CompareTag(Tags.GameObjects.DarkCloud))
+            if (other.gameObject.CompareTag(Tags.GameObjects.Cloud) || other.CompareTag(Tags.GameObjects.DarkCloud))
             {
-                //TODO: Collect the cloud.
+                if (other.transform.position.x == 0f)
+                {
+                    Destroy(other.gameObject);
+                }
+                else
+                {
+                    SetNewPosition(other.gameObject);
+                }
             }
         }
 
@@ -58,6 +65,18 @@ namespace Mantelabs.JackTheGiant.Environment
 
                 _lastY = newPos.y;
             }
+        }
+
+
+        private void SetNewPosition(GameObject cloud)
+        {
+            float distanceBetweenClouds = Random.Range(_minDistanceBetweenClouds, _maxDistanceBetweenClouds);
+            Vector3 currentPos = cloud.transform.position;
+
+            currentPos.y = _lastY - distanceBetweenClouds;
+            _lastY = currentPos.y;
+
+            cloud.transform.position = currentPos;
         }
     }
 }
