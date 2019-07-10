@@ -3,6 +3,8 @@ using UnityEngine;
 
 namespace Mantelabs.JackTheGiant.Environment
 {
+    [RequireComponent(typeof(Rigidbody2D))]
+    [RequireComponent(typeof(BoxCollider2D))]
     public class BGPooler : MonoBehaviour
     {
         private GameObject[] _backgrounds;
