@@ -7,9 +7,14 @@ namespace Mantelabs.JackTheGiant.Environment
     [RequireComponent(typeof(BoxCollider2D))]
     public class CloudPooler : MonoBehaviour
     {
+        [Header("Cloud Prefabs")]
         [SerializeField]
         private GameObject[] _cloudPrefabs;
 
+        [SerializeField]
+        private GameObject _darkCloudPrefab;
+
+        [Header("Pooling options")]
         [SerializeField]
         [Range(1, 10)]
         private int _cloudPoolSize;
@@ -21,6 +26,11 @@ namespace Mantelabs.JackTheGiant.Environment
         [SerializeField]
         [Range(0.5f, 5f)]
         private float _maxDistanceBetweenClouds;
+
+        [SerializeField]
+        [Range(0f, 1f)]
+        private float _darkCloudSpawnChance;
+
 
         private float _lastY;
 

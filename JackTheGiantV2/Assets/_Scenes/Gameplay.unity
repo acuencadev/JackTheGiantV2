@@ -371,9 +371,12 @@ MonoBehaviour:
   - {fileID: 4882440235628848040, guid: 8a9cb79fd90970541812cc28d801eccb, type: 3}
   - {fileID: 8917373560595737135, guid: 76103cef8d42eba4ba6e9404007eb8dd, type: 3}
   - {fileID: 3749415954298770975, guid: fdb7c02a18871e445987bd440d47a4ae, type: 3}
+  _darkCloudPrefab: {fileID: 7755716690050701296, guid: 9483b0c28c502e2499cc6c431611a3da,
+    type: 3}
   _cloudPoolSize: 7
   _minDistanceBetweenClouds: 2
   _maxDistanceBetweenClouds: 5
+  _darkCloudSpawnChange: 0.1
 --- !u!1 &411157578
 GameObject:
   m_ObjectHideFlags: 0
