@@ -376,7 +376,7 @@ MonoBehaviour:
   _cloudPoolSize: 7
   _minDistanceBetweenClouds: 2
   _maxDistanceBetweenClouds: 5
-  _darkCloudSpawnChange: 0.1
+  _darkCloudSpawnChance: 0
 --- !u!1 &411157578
 GameObject:
   m_ObjectHideFlags: 0
