@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Mantelabs.JackTheGiant.Managers;
+using Mantelabs.JackTheGiant.Utils;
+using UnityEngine;
 
 namespace Mantelabs.JackTheGiant.Player
 {
@@ -23,23 +25,26 @@ namespace Mantelabs.JackTheGiant.Player
 
         private void FixedUpdate()
         {
-            float h = Input.GetAxis(Utils.Tags.Axis.Horizontal);
+            if (GameManager.instance.gameStatus == GameStatus.Playing)
+            {
+                float h = Input.GetAxis(Tags.Axis.Horizontal);
 
-            if (h > 0f)
-            {
-                MovePlayer(Vector2.right);
-                Flip(1);
-                _animator.SetBool(Utils.Tags.PlayerParams.Moving, true);
-            }
-            else if (h < 0f)
-            {
-                MovePlayer(Vector2.left);
-                Flip(-1);
-                _animator.SetBool(Utils.Tags.PlayerParams.Moving, true);
-            }
-            else
-            {
-                _animator.SetBool(Utils.Tags.PlayerParams.Moving, false);
+                if (h > 0f)
+                {
+                    MovePlayer(Vector2.right);
+                    Flip(1);
+                    _animator.SetBool(Tags.PlayerParams.Moving, true);
+                }
+                else if (h < 0f)
+                {
+                    MovePlayer(Vector2.left);
+                    Flip(-1);
+                    _animator.SetBool(Tags.PlayerParams.Moving, true);
+                }
+                else
+                {
+                    _animator.SetBool(Tags.PlayerParams.Moving, false);
+                }
             }
         }
 
