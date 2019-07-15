@@ -33,6 +33,7 @@
 
         public class GameObjects
         {
+            public static string Player = "Player";
             public static string Cloud = "Cloud";
             public static string DarkCloud = "DarkCloud";
             public static string Background = "Background";
