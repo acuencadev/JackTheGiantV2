@@ -45,11 +45,9 @@ namespace Mantelabs.JackTheGiant.Environment
         {
             if (other.CompareTag(Tags.GameObjects.DarkCloud))
             {
-                int prefabIndex = Random.Range(0, _cloudPrefabs.Length);
-                GameObject newCloud = Instantiate(_cloudPrefabs[prefabIndex], other.gameObject.transform.position, Quaternion.identity);
+                SetNewPosition(SpawnCloudAtPosition(other.gameObject.transform.position, false));
 
                 Destroy(other.gameObject);
-                SetNewPosition(newCloud);
             }
 
             if (other.gameObject.CompareTag(Tags.GameObjects.Cloud) || other.CompareTag(Tags.GameObjects.DarkCloud))
@@ -64,8 +62,7 @@ namespace Mantelabs.JackTheGiant.Environment
 
                     if (randomChance <= _darkCloudSpawnChance)
                     {
-                        GameObject newCloud = Instantiate(_darkCloudPrefab, other.gameObject.transform.position, Quaternion.identity);
-                        SetNewPosition(newCloud);
+                        SetNewPosition(SpawnCloudAtPosition(other.gameObject.transform.position, true));
                     }
                     else
                     {
@@ -88,9 +85,8 @@ namespace Mantelabs.JackTheGiant.Environment
                 float alternateXPosition = i % 2 == 0 ? 2.5f : -2.5f;
 
                 Vector3 newPos = new Vector3(alternateXPosition, _lastY - distanceBetweenClouds, 0f);
-                int prefabIndex = Random.Range(0, _cloudPrefabs.Length);
 
-                GameObject newCloud = Instantiate(_cloudPrefabs[prefabIndex], newPos, Quaternion.identity);
+                SpawnCloudAtPosition(newPos, false);
 
                 _lastY = newPos.y;
             }
@@ -106,6 +102,25 @@ namespace Mantelabs.JackTheGiant.Environment
             _lastY = currentPos.y;
 
             cloud.transform.position = currentPos;
+        }
+
+
+        private GameObject SpawnCloudAtPosition(Vector3 newPos, bool darkCloud)
+        {
+            GameObject newCloud = null;
+
+            if (darkCloud)
+            {
+                newCloud = Instantiate(_darkCloudPrefab, newPos, Quaternion.identity);
+            }
+            else
+            {
+                int prefabIndex = Random.Range(0, _cloudPrefabs.Length);
+
+                newCloud = Instantiate(_cloudPrefabs[prefabIndex], newPos, Quaternion.identity);
+            }
+
+            return newCloud;
         }
     }
 }
