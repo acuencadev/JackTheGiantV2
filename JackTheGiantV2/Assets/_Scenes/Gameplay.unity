@@ -130,6 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 167731285}
   - component: {fileID: 167731286}
+  - component: {fileID: 167731287}
   m_Layer: 0
   m_Name: BottomDeathZone
   m_TagString: Untagged
@@ -177,6 +178,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 20, y: 0.01}
   m_EdgeRadius: 0
+--- !u!114 &167731287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167731284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59dcd43a10e5d694084f4774ee6da394, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &248169623
 GameObject:
   m_ObjectHideFlags: 0
@@ -1076,6 +1089,7 @@ GameObject:
   m_Component:
   - component: {fileID: 774897694}
   - component: {fileID: 774897695}
+  - component: {fileID: 774897696}
   m_Layer: 0
   m_Name: TopDeathZone
   m_TagString: Untagged
@@ -1123,6 +1137,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 20, y: 0.01}
   m_EdgeRadius: 0
+--- !u!114 &774897696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774897693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59dcd43a10e5d694084f4774ee6da394, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &815977265
 GameObject:
   m_ObjectHideFlags: 0

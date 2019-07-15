@@ -24,7 +24,7 @@ namespace Mantelabs.JackTheGiant.Controllers
             _pauseButton.SetActive(false);
             _pausePanel.SetActive(true);
 
-            Time.timeScale = 0f;
+            GameManager.instance.gameStatus = GameStatus.Paused;
         }
 
 
@@ -33,13 +33,13 @@ namespace Mantelabs.JackTheGiant.Controllers
             _pauseButton.SetActive(true);
             _pausePanel.SetActive(false);
 
-            Time.timeScale = 1f;
+            GameManager.instance.gameStatus = GameStatus.Playing;
         }
 
 
         public void QuitGame()
         {
-            SceneFaderController.instance.LoadScene(Utils.Tags.Scenes.MainMenu);
+            SceneFaderController.instance.LoadScene(Tags.Scenes.MainMenu);
         }
     }
 }
