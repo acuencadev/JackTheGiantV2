@@ -45,8 +45,11 @@ namespace Mantelabs.JackTheGiant.Environment
         {
             if (other.CompareTag(Tags.GameObjects.DarkCloud))
             {
+                int prefabIndex = Random.Range(0, _cloudPrefabs.Length);
+                GameObject newCloud = Instantiate(_cloudPrefabs[prefabIndex], other.gameObject.transform.position, Quaternion.identity);
+
                 Destroy(other.gameObject);
-                //TODO: Replace with Cloud.
+                SetNewPosition(newCloud);
             }
 
             if (other.gameObject.CompareTag(Tags.GameObjects.Cloud) || other.CompareTag(Tags.GameObjects.DarkCloud))
@@ -57,8 +60,17 @@ namespace Mantelabs.JackTheGiant.Environment
                 }
                 else
                 {
-                    //TODO: Check if can set a Cloud or a DarkCloud.
-                    SetNewPosition(other.gameObject);
+                    float randomChance = Random.Range(0f, 1f);
+
+                    if (randomChance <= _darkCloudSpawnChance)
+                    {
+                        GameObject newCloud = Instantiate(_darkCloudPrefab, other.gameObject.transform.position, Quaternion.identity);
+                        SetNewPosition(newCloud);
+                    }
+                    else
+                    {
+                        SetNewPosition(other.gameObject);
+                    }
                 }
             }
         }
