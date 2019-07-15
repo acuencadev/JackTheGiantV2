@@ -1,4 +1,5 @@
-﻿using Mantelabs.JackTheGiant.Utils;
+﻿using Mantelabs.JackTheGiant.Managers;
+using Mantelabs.JackTheGiant.Utils;
 using UnityEngine;
 
 namespace Mantelabs.JackTheGiant.Environment
@@ -76,6 +77,8 @@ namespace Mantelabs.JackTheGiant.Environment
         private void InitializePool()
         {
             GameObject initialCloud = Instantiate(_cloudPrefabs[0], Vector3.zero, Quaternion.identity);
+
+            GameManager.instance.InstantiatePlayerAtPosition(initialCloud.transform.position);
 
             _lastY = initialCloud.transform.position.y;
 

@@ -9,6 +9,9 @@ namespace Mantelabs.JackTheGiant.Managers
 
         public GameStatus gameStatus;
 
+        [SerializeField]
+        private GameObject _playerPrefab;
+
 
         private void Awake()
         {
@@ -33,6 +36,13 @@ namespace Mantelabs.JackTheGiant.Managers
                 instance = this;
                 DontDestroyOnLoad(gameObject);
             }
+        }
+
+
+        public void InstantiatePlayerAtPosition(Vector3 pos)
+        {
+            pos.y += 0.5f;
+            Instantiate(_playerPrefab, pos, Quaternion.identity);
         }
     }
 }
