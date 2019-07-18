@@ -51,7 +51,7 @@ namespace Mantelabs.JackTheGiant.Environment
                 Destroy(other.gameObject);
             }
 
-            if (other.gameObject.CompareTag(Tags.GameObjects.Cloud) || other.CompareTag(Tags.GameObjects.DarkCloud))
+            if (other.gameObject.CompareTag(Tags.GameObjects.Cloud))
             {
                 if (other.transform.position.x == 0f)
                 {
@@ -64,6 +64,7 @@ namespace Mantelabs.JackTheGiant.Environment
                     if (randomChance <= _darkCloudSpawnChance)
                     {
                         SetNewPosition(SpawnCloudAtPosition(other.gameObject.transform.position, true));
+                        Destroy(other.gameObject);
                     }
                     else
                     {
