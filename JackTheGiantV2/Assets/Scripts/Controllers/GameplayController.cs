@@ -6,8 +6,23 @@ namespace Mantelabs.JackTheGiant.Controllers
 {
     public class GameplayController : MonoBehaviour
     {
+        public static GameplayController instance;
+
         [SerializeField]
         private GameObject _pauseButton, _pausePanel, _readyButton, _hud;
+
+
+        private void Awake()
+        {
+            if (instance != null)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                instance = this;
+            }
+        }
 
 
         public void StartGame()

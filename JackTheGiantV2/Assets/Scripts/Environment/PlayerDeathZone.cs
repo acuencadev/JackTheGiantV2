@@ -1,4 +1,5 @@
-﻿using Mantelabs.JackTheGiant.Managers;
+﻿using Mantelabs.JackTheGiant.Controllers;
+using Mantelabs.JackTheGiant.Managers;
 using Mantelabs.JackTheGiant.Utils;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ namespace Mantelabs.JackTheGiant.Environment
             if (other.CompareTag(Tags.GameObjects.Player))
             {
                 GameManager.instance.gameStatus = GameStatus.GameOver;
+                GameplayController.instance.QuitGame();
             }
         }
     }
