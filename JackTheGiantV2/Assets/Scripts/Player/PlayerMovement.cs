@@ -6,7 +6,7 @@ namespace Mantelabs.JackTheGiant.Player
 {
     [RequireComponent(typeof(Animator))]
     [RequireComponent(typeof(Rigidbody2D))]
-    [RequireComponent(typeof(BoxCollider2D))]
+    [RequireComponent(typeof(CapsuleCollider2D))]
     public class PlayerMovement : MonoBehaviour
     {
         [SerializeField]
