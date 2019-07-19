@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8917373560595737128}
   - component: {fileID: 8917373560595737129}
-  - component: {fileID: 8917373560595737134}
+  - component: {fileID: 2666102308668892421}
   m_Layer: 9
   m_Name: Cloud2
   m_TagString: Cloud
@@ -81,8 +81,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &8917373560595737134
-PolygonCollider2D:
+--- !u!68 &2666102308668892421
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -94,37 +94,8 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.72, y: 0.43}
-    newSize: {x: 1.72, y: 0.43}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: 0.1}
+  m_EdgeRadius: 0
   m_Points:
-    m_Paths:
-    - - {x: 0.6972433, y: -0.06799106}
-      - {x: 0.7277124, y: -0.010982223}
-      - {x: 0.7769399, y: -0.022344094}
-      - {x: 0.85999995, y: 0.013504471}
-      - {x: 0.85999995, y: 0.083738714}
-      - {x: 0.7474777, y: 0.13799126}
-      - {x: 0.66299087, y: 0.12672998}
-      - {x: 0.55951387, y: 0.11686325}
-      - {x: 0.41252196, y: 0.14523445}
-      - {x: 0.27976078, y: 0.11898756}
-      - {x: 0.20252, y: 0.16004378}
-      - {x: 0.065982014, y: 0.14247766}
-      - {x: -0.0055134073, y: 0.20649552}
-      - {x: -0.23494491, y: 0.22074352}
-      - {x: -0.37986523, y: 0.17859039}
-      - {x: -0.52023447, y: 0.18523446}
-      - {x: -0.6927567, y: 0.17523447}
-      - {x: -0.8085045, y: 0.13247785}
-      - {x: -0.8514955, y: 0.0754687}
-      - {x: -0.842991, y: 0.03626107}
-      - {x: -0.77346003, y: -0.0022432934}
-      - {x: -0.6823452, y: -0.014120764}
+  - {x: -0.86, y: 0}
+  - {x: 0.86, y: 0}
