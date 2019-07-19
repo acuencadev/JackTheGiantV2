@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 167731285}
   - component: {fileID: 167731286}
   - component: {fileID: 167731287}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: BottomDeathZone
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -1090,7 +1090,7 @@ GameObject:
   - component: {fileID: 774897694}
   - component: {fileID: 774897695}
   - component: {fileID: 774897696}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TopDeathZone
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
