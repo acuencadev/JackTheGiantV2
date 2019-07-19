@@ -988,6 +988,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameStatus: 0
+  score: 0
+  _initialLives: 3
   _playerPrefab: {fileID: 6438492408282824352, guid: c4afa47c13a72be49b0675cf3721fca5,
     type: 3}
 --- !u!4 &676543583

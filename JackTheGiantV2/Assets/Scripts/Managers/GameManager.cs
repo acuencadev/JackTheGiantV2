@@ -1,4 +1,5 @@
-﻿using Mantelabs.JackTheGiant.Utils;
+﻿using Mantelabs.JackTheGiant.Controllers;
+using Mantelabs.JackTheGiant.Utils;
 using UnityEngine;
 
 namespace Mantelabs.JackTheGiant.Managers
@@ -9,8 +10,16 @@ namespace Mantelabs.JackTheGiant.Managers
 
         public GameStatus gameStatus;
 
+        [HideInInspector]
+        public int score;
+
+        [SerializeField]
+        private int _initialLives;
+
         [SerializeField]
         private GameObject _playerPrefab;
+
+        private int _lives;
 
 
         private void Awake()
@@ -35,6 +44,8 @@ namespace Mantelabs.JackTheGiant.Managers
             {
                 instance = this;
                 DontDestroyOnLoad(gameObject);
+
+                _lives = _initialLives;
             }
         }
 
@@ -43,6 +54,22 @@ namespace Mantelabs.JackTheGiant.Managers
         {
             pos.y += 0.5f;
             Instantiate(_playerPrefab, pos, Quaternion.identity);
+        }
+
+
+        public void PlayerDie()
+        {
+            gameStatus = GameStatus.Paused;
+            _lives--;
+
+            if (_lives <= 0)
+            {
+                SceneFaderController.instance.LoadScene(Tags.Scenes.MainMenu);
+            }
+            else
+            {
+                SceneFaderController.instance.LoadScene(Tags.Scenes.Gameplay);
+            }
         }
     }
 }
