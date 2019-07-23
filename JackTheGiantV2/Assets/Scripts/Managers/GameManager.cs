@@ -13,13 +13,14 @@ namespace Mantelabs.JackTheGiant.Managers
         [HideInInspector]
         public int score;
 
+        [HideInInspector]
+        public int lives;
+
         [SerializeField]
         private int _initialLives;
 
         [SerializeField]
         private GameObject _playerPrefab;
-
-        private int _lives;
 
 
         private void Awake()
@@ -45,7 +46,7 @@ namespace Mantelabs.JackTheGiant.Managers
                 instance = this;
                 DontDestroyOnLoad(gameObject);
 
-                _lives = _initialLives;
+                lives = _initialLives;
             }
         }
 
@@ -60,9 +61,9 @@ namespace Mantelabs.JackTheGiant.Managers
         public void PlayerDie()
         {
             gameStatus = GameStatus.Paused;
-            _lives--;
+            lives--;
 
-            if (_lives <= 0)
+            if (lives <= 0)
             {
                 SceneFaderController.instance.LoadScene(Tags.Scenes.MainMenu);
             }

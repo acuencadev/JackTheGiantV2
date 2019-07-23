@@ -13,7 +13,7 @@ namespace Mantelabs.JackTheGiant.Controllers
         private GameObject _pauseButton, _pausePanel, _readyButton, _hud;
 
         [SerializeField]
-        private Text _lifeText, _coinText, scoreText;
+        private Text _lifeText, _coinText, _scoreText;
 
 
         private void Awake()
@@ -35,6 +35,10 @@ namespace Mantelabs.JackTheGiant.Controllers
             _pauseButton.SetActive(true);
             _readyButton.SetActive(false);
             GameManager.instance.gameStatus = GameStatus.Playing;
+
+            SetLifeScore();
+            SetScoreText();
+            SetCoinScore();
         }
 
 
@@ -59,6 +63,24 @@ namespace Mantelabs.JackTheGiant.Controllers
         public void QuitGame()
         {
             SceneFaderController.instance.LoadScene(Tags.Scenes.MainMenu);
+        }
+
+
+        public void SetScoreText()
+        {
+            _scoreText.text = GameManager.instance.score.ToString();
+        }
+
+
+        public void SetCoinScore()
+        {
+            _coinText.text = "0";
+        }
+
+
+        public void SetLifeScore()
+        {
+            _lifeText.text = GameManager.instance.lives.ToString();
         }
     }
 }
