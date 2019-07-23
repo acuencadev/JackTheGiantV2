@@ -1695,6 +1695,9 @@ MonoBehaviour:
   _pausePanel: {fileID: 284367242}
   _readyButton: {fileID: 505534164}
   _hud: {fileID: 1061452816}
+  _lifeText: {fileID: 1626679337}
+  _coinText: {fileID: 248169625}
+  scoreText: {fileID: 1804177095}
 --- !u!1 &1242497584
 GameObject:
   m_ObjectHideFlags: 0

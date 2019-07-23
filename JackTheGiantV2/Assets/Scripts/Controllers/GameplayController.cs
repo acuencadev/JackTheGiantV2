@@ -1,6 +1,7 @@
 ﻿using Mantelabs.JackTheGiant.Managers;
 using Mantelabs.JackTheGiant.Utils;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Mantelabs.JackTheGiant.Controllers
 {
@@ -10,6 +11,9 @@ namespace Mantelabs.JackTheGiant.Controllers
 
         [SerializeField]
         private GameObject _pauseButton, _pausePanel, _readyButton, _hud;
+
+        [SerializeField]
+        private Text _lifeText, _coinText, scoreText;
 
 
         private void Awake()
@@ -36,7 +40,7 @@ namespace Mantelabs.JackTheGiant.Controllers
 
         public void PauseGame()
         {
-            _pauseButton.SetActive(false);
+           _pauseButton.SetActive(false);
             _pausePanel.SetActive(true);
 
             GameManager.instance.gameStatus = GameStatus.Paused;
